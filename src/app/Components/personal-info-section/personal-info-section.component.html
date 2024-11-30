@@ -45,8 +45,8 @@
           [ngClass]="isDarkTheme ? 'toggle-dark' : 'toggle-light'"
           [ngStyle]="{
             'background-image': isDarkTheme
-              ? 'url(assets/NightButton.svg)'
-              : 'url(assets/DayButton.svg)'
+              ? 'url(/assets/NightButton.svg)'
+              : 'url(/assets/DayButton.svg)'
           }"
         ></div>
       </div>
@@ -137,7 +137,7 @@
     >
       Made with
     </span>
-    <img src="assets/heart.svg" alt="heart" />
+    <img src="/assets/heart.svg" alt="heart" />
     <span
       [ngClass]="
         isDarkTheme ? 'dark-mode-dull-font-color' : 'light-mode-dull-font-color'
