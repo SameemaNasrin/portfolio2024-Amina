@@ -19,7 +19,7 @@
 }
 
 .common-dark-theme {
-  background-image: url("../../../assets/projectSectionBG.svg");
+  background-image: url("/assets/projectSectionBG.svg");
   background-position: center;
   background-size: cover;
   background-color: var(--dark-mode-bg-color-opacity12);
@@ -27,7 +27,7 @@
 }
 
 .common-light-theme {
-  background-image: url("../../../assets/projectSectionBG.svg");
+  background-image: url("/assets/projectSectionBG.svg");
   background-color: var(--light-mode-bg-color-opacity12);
   border: 1px solid var(--light-mode-border-color);
 }
@@ -65,11 +65,12 @@
 
 .tab-button {
   border-radius: 40px;
-  padding: 2vh 4vw;
+  padding: 1.5vh 3vw;
   margin: var(--margin);
   background-color: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
+  font-size: 0.7rem;
 }
 
 .tab-button:hover {
