@@ -23,17 +23,19 @@ import { DataService } from '../../Shared/data.service';
 })
 export class PersonalInfoSectionComponent implements OnInit {
   profileImageSrc!: string;
-  skillsLogosSrc1!: string[];
-  skillsLogosSrc2!: string[];
+  socialInfo!: any;
   isDarkTheme: boolean = true;
-  socialInfo: any;
+  techStack: any;
   otherThemeColor!: string[];
 
-  constructor(public dialog: MatDialog, private readonly dataService: DataService) {}
+  constructor(
+    public dialog: MatDialog,
+    private readonly dataService: DataService
+  ) {}
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
-    this.dataService.emitIsDarkTheme(this.isDarkTheme)
+    this.dataService.emitIsDarkTheme(this.isDarkTheme);
     document.body.classList.toggle('dark-theme', this.isDarkTheme);
     document.body.classList.toggle('light-theme', !this.isDarkTheme);
   }
@@ -54,9 +56,8 @@ export class PersonalInfoSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProfileImageSrc();
-    this.getSkillsLogosSrc1();
-    this.getSkillsLogosSrc2();
     this.getSocialInfo();
+    this.getTechStack();
     this.getOtherThemeColor();
   }
 
@@ -64,16 +65,12 @@ export class PersonalInfoSectionComponent implements OnInit {
     this.profileImageSrc = Configurations.profileImageSrc;
   }
 
-  getSkillsLogosSrc1() {
-    this.skillsLogosSrc1 = Configurations.skillsLogosSrc1;
-  }
-  
-  getSkillsLogosSrc2() {
-    this.skillsLogosSrc2 = Configurations.skillsLogosSrc1;
-  }
-
   getSocialInfo() {
     this.socialInfo = Configurations.socialInfo;
+  }
+
+  getTechStack() {
+    this.techStack = Configurations.techStack;
   }
 
   getOtherThemeColor() {
@@ -97,20 +94,20 @@ export class PersonalInfoSectionComponent implements OnInit {
 })
 export class AboutMeDialogContent implements OnInit {
   isDarkTheme: boolean = true;
-  skillsLogosSrc!: string[];
+  techStack: any;
   experienceInfo!: any;
 
   constructor(public dialogRef: MatDialogRef<AboutMeDialogContent>) {}
 
   ngOnInit(): void {
-    this.getSkillsLogosSrc();
-    this.getSkillsLogosSrc();
+    this.getTechStack();
     this.getExperienceInfo();
   }
 
-  getSkillsLogosSrc() {
-    this.skillsLogosSrc = Configurations.skillsLogosSrc;
+  getTechStack() {
+    this.techStack = Configurations.techStack;
   }
+
 
   getExperienceInfo() {
     this.experienceInfo = Configurations.experienceInfo;

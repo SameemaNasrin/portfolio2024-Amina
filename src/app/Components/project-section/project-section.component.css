@@ -49,7 +49,13 @@
 
 .project-card-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 3rem 1rem 3rem;
+}
+
+.show-reel-card-section {
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 0 3rem 1rem 3rem;
 }
 
@@ -109,4 +115,19 @@ mat-tab-group::-webkit-scrollbar {
 
 ::ng-deep .mat-mdc-tab-body-content::-webkit-scrollbar {
   display: none !important;
+}
+
+.video-container {
+  width: 100%;
+  min-height: 80vh;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-player {
+  border: none;
+  width: 100%;
+  min-height: 100%;
 }

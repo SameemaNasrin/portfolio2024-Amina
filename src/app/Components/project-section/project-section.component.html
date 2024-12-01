@@ -61,4 +61,42 @@
       }
     </div>
   </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <button
+        class="tab-button"
+        [ngStyle]="{
+          border: isDarkTheme
+            ? '1px solid var(--dark-mode-border-color)'
+            : '1px solid var(--light-mode-border-color)',
+          color: isDarkTheme
+            ? 'var(--dark-mode-highlight-font-color)'
+            : 'var(--light-mode-highlight-font-color)',
+          backgroundColor:
+            selectedTabIndex === 2
+              ? isDarkTheme
+                ? '#303030'
+                : '#D0D0D0'
+              : 'transparent'
+        }"
+      >
+        SHOW REEL
+      </button>
+    </ng-template>
+    <div class="show-reel-card-section">
+      <div class="video-container">
+        <!-- <video class="video-player" autoplay loop muted>
+          <source
+            src="https://www.youtube.com/watch?v=7md5BmgGa_s"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video> -->
+        <iframe class="video-player" 
+          src="https://www.youtube.com/embed/7md5BmgGa_s"
+        >
+        </iframe>
+      </div>
+    </div>
+  </mat-tab>
 </mat-tab-group>

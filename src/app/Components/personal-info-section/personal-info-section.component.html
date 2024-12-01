@@ -1,5 +1,5 @@
 <div class="personal-info-section">
-  <div class="profile-n-skill-section">
+  <div class="profile-n-social-section">
     <img
       [src]="profileImageSrc"
       alt="profile-image"
@@ -10,20 +10,24 @@
           : '1px solid var(--light-mode-border-color)'
       }"
     />
-    <div
-      class="skill-section"
-      [ngClass]="
-        isDarkTheme ? 'skill-section-dark-theme' : 'skill-section-light-theme'
-      "
-    >
-      <div class="logo-set">
-        @for(logo of skillsLogosSrc1; track logo){
+    <div class="social-section">
+      @for(logo of socialInfo; track logo){
 
-        <img [src]="logo" alt="logo" class="skills-logo" />
-        } @for(logo of skillsLogosSrc2; track logo){
-        <img [src]="logo" alt="logo" class="skills-logo" />
-        }
-      </div>
+      <a
+        [href]="logo.socialLink"
+        target="_blank"
+        class="social-logo-div"
+        [ngStyle]="{
+          border: isDarkTheme ? '1px solid #282828' : '1px solid #E1E2E4'
+        }"
+      >
+        <img
+          [src]="isDarkTheme ? logo.imgSrcDarkTheme : logo.imgSrcLightTheme"
+          alt="logo"
+          class="socials-logo"
+        />
+      </a>
+      }
     </div>
   </div>
   <div class="theme-section">
@@ -61,40 +65,11 @@
       }
     </div>
   </div>
-  <!-- <div
-    class="about-section"
-    [ngClass]="isDarkTheme ? 'common-dark-theme' : 'common-light-theme'"
-  >
-    <h1
-      [ngClass]="
-        isDarkTheme
-          ? 'dark-mode-highlight-font-color'
-          : 'light-mode-highlight-font-color'
-      "
-    >
-      Hi I’m Amina
-    </h1>
-    <p
-      [ngClass]="
-        isDarkTheme ? 'dark-mode-dull-font-color' : 'light-mode-dull-font-color'
-      "
-    >
-      Senior UX designer, working at <u>Thinkbridge</u> based in Pune, India
-    </p>
-  </div> -->
 
   <div
     class="about-section"
     [ngClass]="isDarkTheme ? 'common-dark-theme' : 'common-light-theme'"
   >
-    <!-- <h5
-      [ngClass]="
-        isDarkTheme ? 'dark-mode-dull-font-color' : 'light-mode-dull-font-color'
-      "
-    >
-      ABOUT
-    </h5> -->
-
     <h1
       [ngClass]="
         isDarkTheme
@@ -103,6 +78,16 @@
       "
     >
       Hi I’m Amina
+      <div
+        class="line"
+        [ngStyle]="{
+          'background-color': isDarkTheme
+            ? 'var(--dark-mode-highlight-font-color)'
+            : 'var(--light-mode-highlight-font-color)'
+        }"
+      >
+        -
+      </div>
     </h1>
     <p
       [ngClass]="
@@ -116,17 +101,24 @@
     <app-link-logo (click)="openDialog('500ms', '250ms')" />
   </div>
 
-  <div class="social-section">
-    @for(social of socialInfo; track social){
-    <a href="social.socialLink" target="_blank">
-      <img
-        [src]="isDarkTheme ? social.imgSrcDarkTheme : social.imgSrcLightTheme"
-        alt="social"
-        class="social"
-        [ngClass]="isDarkTheme ? 'common-dark-theme' : 'common-light-theme'"
-      />
-    </a>
-    }
+  <div
+    class="tech-stack-section"
+    [ngClass]="isDarkTheme ? 'common-dark-theme' : 'common-light-theme'"
+  >
+    <h5
+      [ngClass]="
+        isDarkTheme ? 'dark-mode-dull-font-color' : 'light-mode-dull-font-color'
+      "
+    >
+      MY SKILLS
+    </h5>
+    <div class="tech-stack-block">
+      @for(tech of techStack; track tech){
+      <div class="tech-stach-div">
+        <img [src]="tech" alt="tech-stack" class="tech-stach" />
+      </div>
+      }
+    </div>
   </div>
 
   <div class="copyright">
