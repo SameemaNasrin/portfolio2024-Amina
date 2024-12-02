@@ -101,13 +101,13 @@
   align-items: center;
 }
 
-/* .line {
+.line {
   color: transparent;
   text-align: center;
   height: 1.4px;
   margin-left: 0.5rem;
   width: 25%;
-} */
+}
 
 .tech-stack-section h5 {
   font-size: 0.7rem;

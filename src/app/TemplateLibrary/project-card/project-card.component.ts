@@ -23,4 +23,8 @@ export class ProjectCardComponent {
     })
   }
 
+  openProjectDialog(){
+    alert('open')
+  }
+
 }
