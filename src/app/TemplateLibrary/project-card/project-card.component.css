@@ -159,22 +159,22 @@
 
 .left-text {
   position: relative;
-  left: -120%;
+  left: -150%;
   transition: transform 0.7s ease-in-out;
 }
 
 .right-text {
   position: relative;
-  right: -120%;
+  right: -150%;
   transition: transform 0.7s ease-in-out;
 }
 
 .project-card-container:hover .left-text {
-  transform: translate(120%);
+  transform: translate(150%);
 }
 
 .project-card-container:hover .right-text {
-  transform: translate(-120%);
+  transform: translate(-150%);
 }
 
 .line {
